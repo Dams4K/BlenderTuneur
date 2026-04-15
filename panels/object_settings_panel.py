@@ -10,7 +10,3 @@ class TUNEUR_PT_ObjectSettings(bpy.types.Panel):
     def draw(self, context):
         layout = self.layout
         obj = context.object
-
-        props = obj.my_settings
-
-        layout.prop(props, "layers")
