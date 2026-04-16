@@ -13,12 +13,6 @@ bl_info = {
     "dependencies": ["GoBlend"],
 }
 
-ERROR = {"ERROR"}
-INFO = {"INFO"}
-
-CANCELLED = {"CANCELLED"}
-FINISHED = {"FINISHED"}
-
 classes = (
     CreateMaskOperator,
     TUNEUR_PT_room_maker,
