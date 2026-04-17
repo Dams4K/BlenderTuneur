@@ -21,10 +21,11 @@ classes = (
 
     TUNEUR_PT_room_maker,
     TUNEUR_PT_ObjectSettings,
+    TUNEUR_PT_CloseRoomsSettings,
 
     TUNEUR_OP_CreateMask,
-    GOBLEND_OT_AddCloseRoom,
-    GOBLEND_OT_RemoveCloseRoom,
+    TUNEUR_OT_AddCloseRoom,
+    TUNEUR_OT_RemoveCloseRoom,
 )
 
 def register():

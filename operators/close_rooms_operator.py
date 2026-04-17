@@ -1,6 +1,6 @@
 import bpy
 
-class GOBLEND_OT_AddCloseRoom(bpy.types.Operator):
+class TUNEUR_OT_AddCloseRoom(bpy.types.Operator):
     bl_idname = "tuneur.add_close_room"
     bl_label = "Add Close Room"
 
@@ -10,7 +10,7 @@ class GOBLEND_OT_AddCloseRoom(bpy.types.Operator):
         return {'FINISHED'}
 
 
-class GOBLEND_OT_RemoveCloseRoom(bpy.types.Operator):
+class TUNEUR_OT_RemoveCloseRoom(bpy.types.Operator):
     bl_idname = "tuneur.remove_close_room"
     bl_label = "Remove Close Room"
 
