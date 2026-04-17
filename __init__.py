@@ -13,12 +13,18 @@ bl_info = {
 }
 
 classes = (
+    TUNEUR_UL_CloseRooms,
+
+    TUNEUR_CloseRoomProperties,
+    TUNEUR_CloseRoomsProperties,
     TUNEUR_ObjectProperties,
 
     TUNEUR_PT_room_maker,
     TUNEUR_PT_ObjectSettings,
 
     TUNEUR_OP_CreateMask,
+    GOBLEND_OT_AddCloseRoom,
+    GOBLEND_OT_RemoveCloseRoom,
 )
 
 def register():
