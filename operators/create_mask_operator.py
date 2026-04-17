@@ -13,10 +13,19 @@ OBJECT_AREA_COLLISION_NAME  = "Area"
 OBJECT_AREA_COLLISION_TYPE  = "AREA"
 OBJECT_AREA_COLLISION_SHAPE = "BOUNDARIES"
 OBJECT_AREA_COLLISION_COLOR = (0.07, 0.413, 0.021, 0.42)
+OBJECT_AREA_COLLISION_MASK  = [False] * 32
+OBJECT_AREA_COLLISION_LAYER  = [False] * 32
+
+OBJECT_AREA_COLLISION_MASK[0] = True
 
 OBJECT_BODY_COLLISION_NAME  = "Body"
 OBJECT_BODY_COLLISION_SHAPE = "TRIMESH"
 OBJECT_BODY_COLLISION_TYPE  = "STATIC_BODY"
+OBJECT_BODY_COLLISION_MASK  = [False] * 32
+OBJECT_BODY_COLLISION_LAYER = [False] * 32
+
+OBJECT_BODY_COLLISION_LAYER[1] = True
+OBJECT_BODY_COLLISION_MASK[0]  = True
 
 OBJECT_GEOMETRY_CAST_SHADOW = "DOUBLE_SIDED"
 
@@ -72,11 +81,15 @@ class TUNEUR_OP_CreateMask(bpy.types.Operator):
         obj.goblend.collisions.list[static_index].name  = OBJECT_BODY_COLLISION_NAME
         obj.goblend.collisions.list[static_index].shape = OBJECT_BODY_COLLISION_SHAPE
         obj.goblend.collisions.list[static_index].type  = OBJECT_BODY_COLLISION_TYPE
+        obj.goblend.collisions.list[static_index].layer = OBJECT_BODY_COLLISION_LAYER
+        obj.goblend.collisions.list[static_index].mask  = OBJECT_BODY_COLLISION_MASK
 
         obj.goblend.collisions.list[area_index].name  = OBJECT_AREA_COLLISION_NAME
         obj.goblend.collisions.list[area_index].shape = OBJECT_AREA_COLLISION_SHAPE
         obj.goblend.collisions.list[area_index].type  = OBJECT_AREA_COLLISION_TYPE
         obj.goblend.collisions.list[area_index].color = OBJECT_AREA_COLLISION_COLOR
+        obj.goblend.collisions.list[area_index].layer = OBJECT_AREA_COLLISION_LAYER
+        obj.goblend.collisions.list[area_index].mask  = OBJECT_AREA_COLLISION_MASK
 
         obj.goblend.geometry.cast_shadow      = OBJECT_GEOMETRY_CAST_SHADOW
 
