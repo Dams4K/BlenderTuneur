@@ -2,7 +2,6 @@ import bpy
 
 from .panels import *
 from .operators import *
-
 from .properties import *
 
 bl_info = {
@@ -14,16 +13,23 @@ bl_info = {
 }
 
 classes = (
-    CreateMaskOperator,
+    TUNEUR_ObjectProperties,
+
     TUNEUR_PT_room_maker,
     TUNEUR_PT_ObjectSettings,
+
+    TUNEUR_OP_CreateMask,
 )
 
 def register():
     for cls in classes:
         bpy.utils.register_class(cls)
+    
+    bpy.types.Object.tuneur = bpy.props.PointerProperty(type=TUNEUR_ObjectProperties)
 
 def unregister():
+    del bpy.types.Object.tuneur
+
     for cls in classes:
         bpy.utils.unregister_class(cls)
     
