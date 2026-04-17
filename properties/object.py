@@ -11,5 +11,19 @@ class TUNEUR_CloseRoomsProperties(bpy.types.PropertyGroup):
     list: bpy.props.CollectionProperty(type=TUNEUR_CloseRoomProperties)
     list_index: bpy.props.IntProperty()
 
+OBJECT_TYPE = (
+    ("NONE", "None", "Default blender object"),
+    ("ROOM", "Room", "Room"),
+    ("MASK", "Mask", "Mask"),
+)
+
+class TUNEUR_TypeProperties(bpy.types.PropertyGroup):
+    type: bpy.props.EnumProperty(
+        name="Type",
+        items=OBJECT_TYPE,
+        default="NONE"
+    )
+
 class TUNEUR_ObjectProperties(bpy.types.PropertyGroup):
     close_rooms: bpy.props.PointerProperty(type=TUNEUR_CloseRoomsProperties)
+    type: bpy.props.PointerProperty(type=TUNEUR_TypeProperties)

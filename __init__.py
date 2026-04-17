@@ -15,12 +15,14 @@ bl_info = {
 classes = (
     TUNEUR_UL_CloseRooms,
 
+    TUNEUR_TypeProperties,
     TUNEUR_CloseRoomProperties,
     TUNEUR_CloseRoomsProperties,
     TUNEUR_ObjectProperties,
 
     TUNEUR_PT_room_maker,
     TUNEUR_PT_ObjectSettings,
+    TUNEUR_PT_Type,
     TUNEUR_PT_CloseRoomsSettings,
 
     TUNEUR_OP_CreateMask,

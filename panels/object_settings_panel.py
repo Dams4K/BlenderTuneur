@@ -38,6 +38,20 @@ class TUNEUR_PT_CloseRoomsSettings(bpy.types.Panel):
             col.prop(item, "target")
             col.prop(item, "show_mesh")
 
+class TUNEUR_PT_Type(bpy.types.Panel):
+    bl_space_type  = "PROPERTIES"
+    bl_region_type = "WINDOW"
+    bl_label       = "Type"
+    bl_idname      = "TUNEUR_PT_Type"
+    bl_parent_id   = "TUNEUR_PT_ObjectSettings"
+
+    def draw(self, context):
+        layout = self.layout
+        obj = context.object
+
+        props = obj.tuneur.type
+        layout.prop(props, "type")        
+
 class TUNEUR_PT_ObjectSettings(bpy.types.Panel):
     bl_space_type  = "PROPERTIES"
     bl_region_type = "WINDOW"

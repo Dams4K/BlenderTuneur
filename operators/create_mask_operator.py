@@ -43,10 +43,13 @@ class TUNEUR_OP_CreateMask(bpy.types.Operator):
         if bpy.data.objects.get(mask_obj_name) is not None:
             return CANCELLED
 
+        # MASK
+
         mask = obj.copy()
         mask.data = obj.data.copy()
         mask.name = mask_obj_name
 
+        mask.tuneur.type.type = "MASK"
         mask.goblend.layers  = MASK_VISUAL_LAYER
         mask.active_material = mask_material()
 
@@ -55,6 +58,7 @@ class TUNEUR_OP_CreateMask(bpy.types.Operator):
         mask.parent = obj
         mask.matrix_parent_inverse = obj.matrix_world.inverted()
 
+        # OBJECT
 
         obj.goblend.collisions.list.add() # Body
         obj.goblend.collisions.list.add() # Area
@@ -62,6 +66,8 @@ class TUNEUR_OP_CreateMask(bpy.types.Operator):
         index = len(obj.goblend.collisions.list)
         static_index = index-2
         area_index   = index-1
+
+        obj.tuneur.type.type = "ROOM"
 
         obj.goblend.collisions.list[static_index].name  = OBJECT_BODY_COLLISION_NAME
         obj.goblend.collisions.list[static_index].shape = OBJECT_BODY_COLLISION_SHAPE
