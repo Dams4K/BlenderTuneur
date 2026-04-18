@@ -63,7 +63,7 @@ class TUNEUR_OP_CreateMask(bpy.types.Operator):
         mask.tuneur.type.type                 = "MASK"
         mask.goblend.layers                   = MASK_VISUAL_LAYER
         mask.goblend.geometry.cast_shadow     = MASK_CAST_SHADOW
-        mask.goblend.global_illumination.mode = MASK_GI_MODE
+        mask.goblend.geometry.gi_mode         = MASK_GI_MODE
         mask.active_material = mask_material()
 
         obj.users_collection[0].objects.link(mask)
