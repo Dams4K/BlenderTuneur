@@ -8,6 +8,8 @@ MASK_MATERIAL_NAME       = "Mask"
 MASK_MATERIAL_SHADE_MODE = "UNSHADED"
 MASK_VISUAL_LAYER        = [False] * 20
 MASK_VISUAL_LAYER[1]     = True
+MASK_CAST_SHADOW         = "OFF"
+MASK_GI_MODE             = "DISABLED"
 
 OBJECT_AREA_COLLISION_NAME  = "Area"
 OBJECT_AREA_COLLISION_TYPE  = "AREA"
@@ -58,8 +60,10 @@ class TUNEUR_OP_CreateMask(bpy.types.Operator):
         mask.data = obj.data.copy()
         mask.name = mask_obj_name
 
-        mask.tuneur.type.type = "MASK"
-        mask.goblend.layers  = MASK_VISUAL_LAYER
+        mask.tuneur.type.type                 = "MASK"
+        mask.goblend.layers                   = MASK_VISUAL_LAYER
+        mask.goblend.geometry.cast_shadow     = MASK_CAST_SHADOW
+        mask.goblend.global_illumination.mode = MASK_GI_MODE
         mask.active_material = mask_material()
 
         obj.users_collection[0].objects.link(mask)
