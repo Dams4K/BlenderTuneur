@@ -18,12 +18,14 @@ classes = (
     TUNEUR_TypeProperties,
     TUNEUR_CloseRoomProperties,
     TUNEUR_CloseRoomsProperties,
+    TUNEUR_RoomProperties,
     TUNEUR_ObjectProperties,
 
     TUNEUR_PT_room_maker,
     TUNEUR_PT_ObjectSettings,
     TUNEUR_PT_Type,
     TUNEUR_PT_CloseRoomsSettings,
+    TUNEUR_PT_RoomSettings,
 
     TUNEUR_OP_CreateMask,
     TUNEUR_OT_AddCloseRoom,
